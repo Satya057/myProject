@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        #input {
+            display: flex;
+            justify-content: center;
+            padding: 1em;
+           
+        }
+
+        #city-name{
+            box-shadow: 10px 5px 5px red;
+            color: rgb(234, 111, 16);
+font-size: x-large;
+font-style: initial;
+        }
+
+        #container {
+            display: none;
+            /* display: grid; */
+            grid-template-columns: repeat(5,auto);
+            column-gap: 0;
+            background-color: dimgray;
+            box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+            margin: auto;
+            align-items: center;
+            border: solid 0.5px snow;
+            border-radius: 0.6em;
+            width: 60%;
+        }
+        .data {
+            display: flex;
+            /* margin: auto; */
+            background-color: transparent;
+            flex-direction: column;
+            align-items: center;
+            padding: 1em 1.2em;
+            border: solid 0.1px snow;
+        }
+        .data > img {
+            /* margin: auto; */
+            width: 100px;
+            height: 100px;
+        }
+        .data > p {
+            text-align: center;
+            color: snow;
+            margin: 0;
+            letter-spacing: 0.05em;
+        }
+        .day {
+            font-size: 0.85rem;
+            /* padding-top: 0.7rem; */
+        }
+        .temp-max {
+            font-weight: 700;
+            padding-bottom: 0.1em;
+        }
+        .temp-min {
+            font-size: 0.85rem;
+            /* padding-bottom: 0.7em; */
+        }
+    </style>
+</head>
+<body>
+    <div id="input">
+        <input type="text" id="city-name" placeholder="Enter city name">
+        <input type="submit" id="submit" value="SUBMIT" onclick="overall()">
+    </div>
+
+    <div id="container">
+        <div class="data">
+            <p class="day"></p>
+            <img src="">
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+        </div>
+        <div class="data">
+            <p class="day"></p>
+            <img src="">
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+        </div>
+        <div class="data">
+            <p class="day"></p>
+            <img src="">
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+        </div>
+        <div class="data">
+            <p class="day"></p>
+            <img src="">
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+        </div>
+        <div class="data">
+            <p class="day"></p>
+            <img src="">
+            <p class="temp-max"></p>
+            <p class="temp-min"></p>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function overall() {
+        let city = document.getElementById('city-name').value;
+        let key = '0eb583ef21b448f753b9c7e98251727a';
+        let url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=metric`;
+        
+        getData(url);
+        console.log("https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${key}&units=metric")
+    }
+    async function getData(url) {
+        let res = await fetch(url);
+        let data = await res.json();
+
+        console.log(data.list);
+
+        let count = 0;
+        for (let i = 1; i < 40; i++) {
+            // console.log(data.list[i].dt_txt.substr(11))
+            if (data.list[i].dt_txt.substr(11) == '12:00:00') {
+                let iconcode = data.list[i].weather[0].icon;
+                let iconurl = `http://openweathermap.org/img/wn/${iconcode}@2x.png`;
+                document.getElementsByTagName('img')[count].src = iconurl;
+
+                let day = new Date(data.list[i].dt_txt)
+                day = String(day).substr(0,3)
+                document.getElementsByClassName('day')[count].textContent = day;
+                
+                let tempMax = Math.floor(data.list[i].main.temp_max);
+                document.getElementsByClassName('temp-max')[count].textContent = `${tempMax}°`;
+
+                let tempMin = Math.floor(data.list[i].main.temp_min);
+                document.getElementsByClassName('temp-min')[count].textContent = `${tempMin}°`;
+
+                count++;
+            }
+        }
+
+        document.getElementById('container').setAttribute('style','display:grid');
+    }
+</script>
