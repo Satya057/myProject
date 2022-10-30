@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+
+
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+    background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+    background:var(--black);
+}
+
+section{
+    padding:5rem 9%;
+}
+
+.heading{
+    text-align: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.heading::before{
+    content: '';
+    position: absolute;
+    top:50%; left:0;
+    transform: translateY(-50%);
+    width: 100%;
+    height:.01rem;
+    background: rgba(0,0,0,.1);
+    z-index: -1;
+}
+
+.heading span{
+    font-size: 3rem;
+    padding:.5rem 2rem;
+    color:var(--black);
+    background: #fff;
+    border:var(--border);
+}
+
+.btn{
+    margin-top: 1rem;
+    display:inline-block;
+    padding:.9rem 3rem;
+    border-radius: .5rem;
+    color:#fff;
+    background:var(--green);
+    font-size: 1.7rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn:hover{
+    background:var(--dark-color);
+}
+
+
+
+.header-1 img{
+    width: 40%;
+    height: 90px;
+    
+}
+
+.header .header-1{
+    background:rgb(240, 236, 236);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    height:60px;
+    padding:1.5rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .header-1 .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+}
+
+.header .header-1 .logo i{
+    color:var(--green);
+}
+
+.header .header-1 .search-form{
+    width:67rem;
+    height:5rem;
+    border:var(--border);
+    overflow: hidden;
+    background:#fff;
+    display:flex;
+    align-items: center;
+    border-radius: .5rem;
+   
+}
+
+.header .header-1 .search-form input{
+    font-size: 1.6rem;
+    padding:0 1.2rem;
+    height:100%;
+    width:100%;
+    text-transform: none;
+    color:var(--black);
+}
+
+.header .header-1 .search-form label{
+    font-size: 2.5rem;
+    padding-right: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+    color:var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+    font-size: 2.5rem;
+    margin-left: 1.5rem;
+    color:var(--black);
+    cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+    color:var(--green);
+}
+
+#search-btn{
+    display: none;
+}
+.navbar {
+    overflow: hidden;
+    background-color: rgb(192, 191, 191);
+    font-family: Arial;
+justify-content: center;
+  }
+  
+  /* Links inside the navbar */
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+
+
+
+
+      
+ 
+.container {
+    width: 50%;
+ 
+    margin: auto;
+  padding: 16px;
+}
+
+ 
+input[type=text], input[type=password],input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+ /* hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+} */
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: auto;
+  border: none;
+  
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.registerbtn:hover {
+  opacity:1;
+}
+
+.lagg{
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+}
+ 
+/* a {
+  color: dodgerblue;
+} */
+
+ 
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+    </style>
+</head>
+<body>
+
+
+
+    <header class="header">
+
+        <div class="header-1">
+            <img src="https://webasset.fraazo.com/production/b70a67f4e825e3d388ac4466952c20a8.svg" alt=""> 
+            
+    
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="Find fresh vegetables, fruits and dairy..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+    
+            <div class="icons">
+               <a href="#" class="fas fa-shopping-cart"> </a>
+                
+                   
+                </div>
+                
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+    
+<form>
+    <div class="container">
+      <h1>Register</h1>
+      <p>Please fill in this form to create an account.</p>
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+  
+      <label for="mob"><b>MobileNo.</b></label>
+      <input type="number" placeholder="Enter Number" name="mob" id="mob" required>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Password" name="pass" id="pass" required>
+      <hr>
+      <button type="submit" class="registerbtn" value="get Account" onClick="store()" >Register</button>
+    
+      </div>
+      <div class="lagg">
+
+      <a href ='login.html' class="registerbtn"> Login </a>
+    </div>
+   </form>
+
+
+   <script>
+    var name = document.getElementById('email');
+    var mob = document.getElementById('mob');
+    var pw = document.getElementById('pass');
+
+    function store() {
+    localStorage.setItem('email', email.value);
+    localStorage.setItem('mob', mob.value);
+    localStorage.setItem('pass', pass.value);
+    window.alert('You are successfully Registered!!')
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+
+   <style>
+
+
+
+
+
+
+
+
+html{
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-padding-top: 5rem;
+   scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+   width:1rem;
+}
+
+html::-webkit-scrollbar-track{
+   background:transparent;
+}
+
+html::-webkit-scrollbar-thumb{
+   background:var(--black);
+}
+
+section{
+   padding:5rem 9%;
+}
+
+.heading{
+   text-align: center;
+   margin-bottom: 2rem;
+   position: relative;
+}
+
+.heading::before{
+   content: '';
+   position: absolute;
+   top:50%; left:0;
+   transform: translateY(-50%);
+   width: 100%;
+   height:.01rem;
+   background: rgba(0,0,0,.1);
+   z-index: -1;
+}
+
+.heading span{
+   font-size: 3rem;
+   padding:.5rem 2rem;
+   color:var(--black);
+   background: #fff;
+   border:var(--border);
+}
+
+.btn{
+   margin-top: 1rem;
+   display:inline-block;
+   padding:.9rem 3rem;
+   border-radius: .5rem;
+   color:#fff;
+   background:var(--green);
+   font-size: 1.7rem;
+   cursor: pointer;
+   font-weight: 500;
+}
+
+.btn:hover{
+   background:var(--dark-color);
+}
+
+
+
+.header-1 img{
+   width: 40%;
+   height: 90px;
+   
+}
+
+.header .header-1{
+   background:rgb(240, 236, 236);
+   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   height:60px;
+   padding:1.5rem 9%;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.header .header-1 .logo{
+   font-size: 2.5rem;
+   font-weight: bolder;
+   color:var(--black);
+}
+
+.header .header-1 .logo i{
+   color:var(--green);
+}
+
+.header .header-1 .search-form{
+   width:67rem;
+   height:5rem;
+   border:var(--border);
+   overflow: hidden;
+   background:#fff;
+   display:flex;
+   align-items: center;
+   border-radius: .5rem;
+  
+}
+
+.header .header-1 .search-form input{
+   font-size: 1.6rem;
+   padding:0 1.2rem;
+   height:100%;
+   width:100%;
+   text-transform: none;
+   color:var(--black);
+}
+
+.header .header-1 .search-form label{
+   font-size: 2.5rem;
+   padding-right: 1.5rem;
+   color:var(--black);
+   cursor: pointer;
+}
+
+.header .header-1 .search-form label:hover{
+   color:var(--green);
+}
+
+.header .header-1 .icons div,
+.header .header-1 .icons a{
+   font-size: 2.5rem;
+   margin-left: 1.5rem;
+   color:var(--black);
+   cursor: pointer;
+}
+
+.header .header-1 .icons div:hover,
+.header .header-1 .icons a:hover{
+   color:var(--green);
+}
+
+#search-btn{
+   display: none;
+}
+.navbar {
+   overflow: hidden;
+   background-color: rgb(192, 191, 191);
+   font-family: Arial;
+justify-content: center;
+ }
+ 
+ /* Links inside the navbar */
+ .navbar a {
+   float: left;
+   font-size: 16px;
+   color: white;
+   text-align: center;
+   padding: 14px 16px;
+   text-decoration: none;
+ }
+
+/* .header .header-2{
+   background:var(--green);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       .card {
+          
+            
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+ max-width: 300px;
+ max-height: 350px;
+
+ margin: auto;
+ text-align: left;
+ font-family: arial;
+}
+
+.card img{
+   width: 220px;
+   height: 180px;
+   background-color: beige;
+}
+.grid{
+   
+   
+   display: grid;
+           grid-template-columns: repeat(4,1fr);
+           gap:50px;
+           width: 80%;
+           margin: auto;
+           padding-top: 10px;
+  
+    
+}
+
+
+.price {
+ color: grey;
+ font-size: 22px;
+}
+
+.card button {
+ border: none;
+ outline: 0;
+ padding: 12px;
+ color: white;
+ background-color: #000;
+ text-align: center;
+ cursor: pointer;
+ width: 100%;
+ font-size: 18px;
+}
+
+.card button:hover {
+ opacity: 0.7;
+}
+.pro{
+   height:90px;
+   width:200px;
+   justify-content: space-between;
+  
+   
+}
+
+
+       
+     
+       
+      
+          </style>
+</head>
+<body>
+
+
+   <header class="header">
+
+       <div class="header-1">
+           <img src="https://webasset.fraazo.com/production/b70a67f4e825e3d388ac4466952c20a8.svg" alt=""> 
+           
+   
+           <form action="" class="search-form">
+               <input type="search" name="" placeholder="Find fresh vegetables, fruits and dairy..." id="search-box">
+               <label for="search-box" class="fas fa-search"></label>
+           </form>
+   
+           <div class="icons">
+              <a href="#" class="fas fa-shopping-cart"> </a>
+               
+                  
+               </div>
+               
+           </div>
+       </div>
+   </header>
+
+
+
+
+
+     <div class="grid">
+   <div class="card">
+       <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/599/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Orange</h3>
+       <p class="price"> 1pc/Rs99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imageprod.fraazo.com/fraazo-prod/images/images/000/006/624/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Blueberry</h3>
+       <p class="price"> 1pkt/Rs250</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+
+     <div class="card">
+       <img src="https://imagemaster.fraazo.com/fraazo-master/products/VBEE12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Dragon Fruit</h3>
+       <p class="price"> 1pc/Rs69</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imagemaster.fraazo.com/fraazo-master/products/VSWE12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Green Kiwi</h3>
+       <p class="price"> 1pkt/Rs66</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+
+     <div class="card">
+       <img src="https://imagemaster.fraazo.com/fraazo-master/products/VARB12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Indian Avocado</h3>
+       <p class="price"> 1pc/Rs19.99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imageprod.fraazo.com/fraazo-prod/images/images/000/006/605/original/data?width=256&height=256" alt="" style="width:100%">
+       <div class="pro">
+       <h3>Indian Avocado</h3>
+       <p class="price"> 1pc/Rs19.99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imageprod.fraazo.com/fraazo-prod/images/images/000/009/241/original/data?width=256&height=256" alt="" style="width:100%">
+       <div class="pro">
+       <h3>Indian Avocado</h3>
+       <p class="price"> 1pc/Rs19.99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imagemaster.fraazo.com/fraazo-master/products/VSUR12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Indian Avocado</h3>
+       <p class="price"> 1pc/Rs19.99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+       <img src="https://imagemaster.fraazo.com/fraazo-master/products/FCAR1.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+       <div class="pro">
+       <h3>Indian Avocado</h3>
+       <p class="price"> 1pc/Rs19.99</p>
+       
+       <p><button>Add to Cart</button></p>
+   </div>
+     </div>
+
+
+     <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/BONI11.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VMUL12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/BPOT11.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/012/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/234/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VBRI12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/images/images/000/009/246/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/101/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/ESWE13.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VCAP12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/315/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VCAB12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VCAU12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VBIT12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VPUM12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      <div class="card">
+        <img src="https://imagemaster.fraazo.com/fraazo-master/products/VBOT12.png?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/028/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+      <div class="card">
+        <img src="https://imageprod.fraazo.com/fraazo-prod/products/product_images/000/000/106/original/data?width=256&height=256" alt="Denim Jeans" style="width:100%">
+        <div class="pro">
+        <h3>Indian Avocado</h3>
+        <p class="price"> 1pc/Rs19.99</p>
+        
+        <p><button>Add to Cart</button></p>
+    </div>
+      </div>
+
+
+
+      
+   </div> 
+      
+      
+</body>
+</html>
